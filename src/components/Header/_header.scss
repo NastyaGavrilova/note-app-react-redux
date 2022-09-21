@@ -1,0 +1,25 @@
+@import "../../styles/variables";
+.header {
+  width: 100%;
+  background: $c-grey;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  &__list {
+    max-width: 950px;
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__list-icons {
+    max-width: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
