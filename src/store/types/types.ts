@@ -15,7 +15,7 @@ export type ModalData = {
 export type Id = number | string;
 
 export type SubmitNote = {
-  id: number,
+  id: string,
   name: string,
   created: string,
   category: string,

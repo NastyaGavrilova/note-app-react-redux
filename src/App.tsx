@@ -1,15 +1,27 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { FC } from 'react';
+import { connect, useSelector } from 'react-redux';
 import NoteContainer from './components/NoteContainer/NoteContainer';
+import { State } from './store/types/types';
 
-function App() {
+// interface AppProps {
+//   showArchived: boolean
+// }
+const App = () => {
+
 
   return (
     <div className="App">
-      
-      <NoteContainer/>
+
+      <NoteContainer />
     </div>
   );
 }
-
 export default App;
+// const mapStateToProps = (state: State) => {
+//   return {
+//     // modalData: state.modal,
+//     showArchived: state.showArchived
+//   }
+// }
+
+// export default connect(mapStateToProps)(App);

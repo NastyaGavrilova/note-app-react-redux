@@ -2,14 +2,10 @@
 import { createReducer, PayloadAction } from '@reduxjs/toolkit';
 import * as actions from "../actions/actions";
 
-// interface NoteState {
-//   notes: INote[],
-// }
-
 const initialState = {
   notes: [
     {
-      id: 1,
+      id: "1",
       name: "Shopping List",
       created: "April 20, 2021",
       category: "Task",
@@ -18,7 +14,7 @@ const initialState = {
       archived: false,
     },
     {
-      id: 2,
+      id: "2",
       name: "The theory of evolution",
       created: "April 27, 2021",
       category: "Random Thought",
@@ -27,7 +23,7 @@ const initialState = {
       archived: false,
     },
     {
-      id: 3,
+      id: "3",
       name: "New Feature",
       created: "May 05, 2021",
       category: "Idea",
@@ -36,7 +32,7 @@ const initialState = {
       archived: false,
     },
     {
-      id: 4,
+      id: "4",
       name: "William Gaddis",
       created: "May 07, 2021",
       category: "Quote",
@@ -45,7 +41,7 @@ const initialState = {
       archived: false,
     },
     {
-      id: 5,
+      id: "5",
       name: "Books",
       created: "May 15, 2021",
       category: "Task",
@@ -54,6 +50,7 @@ const initialState = {
       archived: true,
     }
   ],
+  showArchived: false,
 
 }
 
@@ -118,7 +115,8 @@ const noterReducer = createReducer(initialState, (builder) =>
     .addCase(
       actions.archive, (state, action) => {
         const newNotes = state.notes.map((note) => {
-          if (note.id == action.payload) {
+          if (note.id === action.payload) {
+            console.log(state.notes)
             return { ...note, archived: true };
           }
           return note
@@ -140,6 +138,14 @@ const noterReducer = createReducer(initialState, (builder) =>
         return {
           ...state,
           notes: newNotes,
+        }
+      }
+    )
+    .addCase(
+      actions.toggleShowArchived, (state, action) => {
+        return {
+          ...state,
+          showArchived: !state.showArchived
         }
       }
     )
