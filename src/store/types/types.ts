@@ -1,14 +1,16 @@
 export type State = {
   notes: SubmitNote[],
-  tableData: { [key: string]: { active: number, archived: number } }[],
+  statisticsList: { [key: string]: { active: number, archived: number } }[],
   modal: ModalData,
   showArchived: boolean
 }
 
 export type ModalData = {
   name: string,
+  content: string,
   category: string,
-  isOpen: boolean,
+  isOpenEdit: boolean,
+  isOpenCreate: boolean,
   id: string,
 }
 
@@ -20,12 +22,12 @@ export type SubmitNote = {
   created: string,
   category: string,
   content: string,
-  dates: string,
   archived: boolean,
 }
 
 export type SubmitEdit = {
   name: string;
   category: string;
+  content: string,
   id: Id;
 }

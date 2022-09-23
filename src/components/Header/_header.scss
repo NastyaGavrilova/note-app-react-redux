@@ -8,15 +8,14 @@
   border-radius: 4px;
   margin-bottom: 20px;
   &__list {
-    max-width: 950px;
-    width: 100%;
     list-style-type: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   &__list-icons {
-    max-width: 80px;
+    list-style-type: none;
+    max-width: 100px;
     width: 100%;
     display: flex;
     justify-content: space-between;

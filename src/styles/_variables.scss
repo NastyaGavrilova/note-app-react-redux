@@ -1,10 +1,14 @@
 @import "./fonts";
 
 // COLORS
-$c-grey:#999999;
+$c-grey: #999999;
+$c-border: #2c4369fe;
 $c-white: white;
 $c-black: black;
-$c-item:#e8eaf5;
+$c-item: #e8eaf5;
 
 // FONTS
 $f-base: "Raleway";
+
+// TRANSITION
+$t-transition: all ease-in-out 0.7s;

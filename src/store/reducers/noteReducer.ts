@@ -1,5 +1,5 @@
 
-import { createReducer, PayloadAction } from '@reduxjs/toolkit';
+import { createReducer } from '@reduxjs/toolkit';
 import * as actions from "../actions/actions";
 
 const initialState = {
@@ -10,7 +10,6 @@ const initialState = {
       created: "April 20, 2021",
       category: "Task",
       content: "Tomatoes, bread",
-      dates: "",
       archived: false,
     },
     {
@@ -19,7 +18,6 @@ const initialState = {
       created: "April 27, 2021",
       category: "Random Thought",
       content: "The evolution",
-      dates: "",
       archived: false,
     },
     {
@@ -28,7 +26,6 @@ const initialState = {
       created: "May 05, 2021",
       category: "Idea",
       content: "Implement new feature in project on the 15/09/2022",
-      dates: "15/09/2022",
       archived: false,
     },
     {
@@ -37,7 +34,6 @@ const initialState = {
       created: "May 07, 2021",
       category: "Quote",
       content: "Power doesn't co...",
-      dates: "",
       archived: false,
     },
     {
@@ -46,10 +42,18 @@ const initialState = {
       created: "May 15, 2021",
       category: "Task",
       content: "The Lean Startup",
-      dates: "",
       archived: true,
     }
   ],
+  statiscticsList: [],
+  modal: {
+    name: '',
+    category: '',
+    content: '',
+    isOpenEdit: false,
+    isOpenCreate: false,
+    id: '',
+  },
   showArchived: false,
 
 }
@@ -77,32 +81,50 @@ const noterReducer = createReducer(initialState, (builder) =>
     )
     .addCase(
       actions.closeModal, (state, action) => {
-        const closedModal = { text: '', category: '', isOpen: false, id: '' }
+        const closedModal = { name: '', category: '', content: '', isOpenEdit: false, isOpenCreate: false, id: '' }
         return {
           ...state,
           modal: closedModal,
         }
       }
     )
-    // .addCase(
-    //   actions.openModal, (state, action) => {
-    //     const newModal = {
-    //       text: state.notes.filter(note => note.id == action.payload)[0].text,
-    //       category: state.notes.filter(note => note.id == action.payload)[0].category,
-    //       isOpen: true,
-    //       id: action.payload
-    //     }
-    //     return {
-    //       ...state,
-    //       modal: newModal,
-    //     }
-    //   }
-    // )
+    .addCase(
+      actions.openModalEdit, (state, action) => {
+        const newModal = {
+          name: state.notes.filter(note => note.id === action.payload)[0].name,
+          category: state.notes.filter(note => note.id == action.payload)[0].category,
+          content: state.notes.filter(note => note.id === action.payload)[0].content,
+          isOpenEdit: true,
+          isOpenCreate: false,
+          id: action.payload
+        }
+        return {
+          ...state,
+          modal: newModal,
+        }
+      }
+    )
+    .addCase(
+      actions.openModalCreate, (state, action) => {
+        const newModal = {
+          name: state.notes.filter(note => note.id !== action.payload)[0].name,
+          category: state.notes.filter(note => note.id !== action.payload)[0].category,
+          content: state.notes.filter(note => note.id !== action.payload)[0].content,
+          isOpenEdit: false,
+          isOpenCreate: true,
+          id: action.payload
+        }
+        return {
+          ...state,
+          modal: newModal,
+        }
+      }
+    )
     .addCase(
       actions.edit, (state, action) => {
         const newNotes = state.notes.map((note) => {
           if (note.id == action.payload.id) {
-            return { ...note, text: action.payload.name, category: action.payload.category };
+            return { ...note, name: action.payload.name, category: action.payload.category, content: action.payload.content };
           }
           return note
         })
@@ -146,6 +168,14 @@ const noterReducer = createReducer(initialState, (builder) =>
         return {
           ...state,
           showArchived: !state.showArchived
+        }
+      }
+    )
+    .addCase(
+      actions.changeStatisticsList, (state, action) => {
+        return {
+          ...state,
+          statiscticsList: action.payload
         }
       }
     )
