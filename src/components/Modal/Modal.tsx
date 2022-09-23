@@ -43,7 +43,7 @@ const Modal: FC<Props> = ({ modalData, closeModal, submitEdit, onSubmit }) => {
     if (createNoteName === '') {
       alert({ text: 'Please write something in your note', type: 'notice', delay: 2500, styling: 'angeler', icons: 'angeler' })
       return
-    } else if (createNoteCategory == 'null') {
+    } else if (createNoteCategory === 'null') {
       alert({ text: 'PLease select a category', type: 'notice', delay: 2000, styling: 'angeler', icons: 'angeler' })
       return
     }
@@ -101,10 +101,11 @@ const Modal: FC<Props> = ({ modalData, closeModal, submitEdit, onSubmit }) => {
         <input className='modal__input-name' type={"text"} placeholder="Note Name" value={modalData.isOpenEdit === true ? name : createNoteName} onChange={modalData.isOpenEdit === true ? handleNoteName : handleNoteCreateName}></input>
         <p className='modal__select-category'>Select Category:</p>
         <select className='modal__select' value={modalData.isOpenEdit === true ? category : createNoteCategory} onChange={modalData.isOpenEdit === true ? handleNoteCategory : handleNoteCreateCategory}>
-          <option value="Task">Task</option>
-          <option value="Idea">Idea</option>
+          <option value={"Task"}>Pick Category</option>
+          <option value={"Task"}>Task</option>
+          <option value={"Idea"}>Idea</option>
           <option value={"Quote"}>Quote</option>
-          <option value="Random Thought">Random thought</option>
+          <option value={"Random Thought"}>Random thought</option>
         </select>
         <textarea className='modal__content' placeholder='Content of your note' value={modalData.isOpenEdit === true ? content : createNoteContent} onChange={modalData.isOpenEdit === true ? handleNoteContent : handleNoteCreateContent}></textarea>
         <div className='modal__footer'>
