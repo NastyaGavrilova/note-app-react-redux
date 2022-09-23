@@ -38,7 +38,25 @@ const Modal: FC<Props> = ({ modalData, closeModal, submitEdit, onSubmit }) => {
   }
   const handleSubmitCreate = () => {
     let now = new Date();
-    let dateTime = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()} | ${now.getHours()}:${now.getMinutes()}`;
+    let month = now.getMonth();
+    let day = now.getDate();
+    let year = now.getFullYear();
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    let dateTime = `${monthNames[month]} ${day}, ${year}`
+
 
     if (createNoteName === '') {
       alert({ text: 'Please write something in your note', type: 'notice', delay: 2500, styling: 'angeler', icons: 'angeler' })
