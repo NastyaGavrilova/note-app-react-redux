@@ -1,6 +1,6 @@
 import React, { FC, MouseEventHandler } from 'react';
 import { SubmitNote } from '../../store/types/types';
-import "./_noteItem.scss";
+// import "./_noteItem.scss";
 interface NoteItemProps {
   note: SubmitNote,
   click: MouseEventHandler<HTMLButtonElement>,

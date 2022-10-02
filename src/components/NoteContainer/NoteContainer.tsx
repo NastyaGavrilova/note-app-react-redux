@@ -5,7 +5,7 @@ import { ModalData, State, SubmitNote, SubmitEdit } from '../../store/types/type
 import * as actions from '../../store/actions/actions';
 import NoteItem from '../NoteItem/NoteItem';
 import Header from '../Header/Header';
-import "./_noteContainer.scss";
+// import "./_noteContainer.scss";
 import ShowArchiveBtn from "../ShowArchiveBtn/ShowArchiveBtn";
 import Modal from "../Modal/Modal";
 

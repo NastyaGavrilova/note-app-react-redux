@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../Header/Header';
 import StatiscticsListItem from './StatiscticsListItem/StatiscticsListItem';
-import "./_statisticsList.scss";
+// import "./_statisticsList.scss";
 
 const ActiveArchive = () => {
   const activeArchive = ["Note Category", 'Active', 'Archive'];

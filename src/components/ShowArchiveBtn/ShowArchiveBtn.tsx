@@ -2,7 +2,7 @@ import React, { FC, MouseEventHandler } from 'react';
 import { AppDispatch } from '../../store/store';
 import * as actions from '../../store/actions/actions';
 import { connect } from 'react-redux';
-import "./_showArchived.scss";
+// import "./_showArchived.scss";
 
 interface ColorProps {
   btnText: string

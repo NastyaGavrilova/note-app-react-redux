@@ -3,7 +3,7 @@ import { AppDispatch } from '../../../store/store';
 import { State, SubmitNote } from '../../../store/types/types';
 import * as actions from '../../../store/actions/actions';
 import { connect } from 'react-redux';
-import "./_statisticsListItem.scss"
+// import "./_statisticsListItem.scss"
 interface Props {
   notes: SubmitNote[],
   onUpdate: (data: ListData) => void,

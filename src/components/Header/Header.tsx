@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import "./_header.scss";
+// import "./_header.scss";
 
 interface Props {
   listItem?: JSX.Element | JSX.Element[] | string,
