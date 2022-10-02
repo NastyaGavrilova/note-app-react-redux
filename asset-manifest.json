@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/note-app-react-redux/static/css/main.6aec7480.css",
+    "main.css": "/note-app-react-redux/static/css/main.05552c11.css",
     "main.js": "/note-app-react-redux/static/js/main.6aae7d8e.js",
     "index.html": "/note-app-react-redux/index.html",
-    "main.6aec7480.css.map": "/note-app-react-redux/static/css/main.6aec7480.css.map",
+    "main.05552c11.css.map": "/note-app-react-redux/static/css/main.05552c11.css.map",
     "main.6aae7d8e.js.map": "/note-app-react-redux/static/js/main.6aae7d8e.js.map"
   },
   "entrypoints": [
-    "static/css/main.6aec7480.css",
+    "static/css/main.05552c11.css",
     "static/js/main.6aae7d8e.js"
   ]
 }
