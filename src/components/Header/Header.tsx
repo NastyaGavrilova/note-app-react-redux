@@ -1,14 +1,13 @@
 import React, { FC } from 'react';
-import "./_header.scss";
 
-interface Props {
+export interface Props {
   listItem?: JSX.Element | JSX.Element[] | string,
   btns?: JSX.Element | JSX.Element[],
   isStatisticsHeader: boolean
 
 }
 
-const Header: FC<Props> = ({ listItem, btns, isStatisticsHeader }) => {
+export const Header: FC<Props> = ({ listItem, btns, isStatisticsHeader }) => {
   const headerWidth = {
     maxWidth: '900px',
     width: "100%"
@@ -17,11 +16,9 @@ const Header: FC<Props> = ({ listItem, btns, isStatisticsHeader }) => {
     width: "100%"
   }
   return (
-    <header className='header'>
-      <ul className='header__list' style={(isStatisticsHeader === false ? headerWidth : statisticsHeaderWidth)}>{listItem}</ul>
-      {isStatisticsHeader === false ? <ul className='header__list-icons'>{btns}</ul> : null}
+    <header className='bg-grey p-5 flex justify-between rounded mb-5'>
+      <ul className='flex justify-between items-center' style={(isStatisticsHeader === false ? headerWidth : statisticsHeaderWidth)}>{listItem}</ul>
+      {isStatisticsHeader === false ? <ul className='max-w-[100px] w-full flex justify-between items-center'>{btns}</ul> : null}
     </header>
   );
 };
-
-export default Header;

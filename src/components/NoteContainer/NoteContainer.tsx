@@ -4,8 +4,7 @@ import { AppDispatch } from '../../store/store';
 import { ModalData, State, SubmitNote, SubmitEdit } from '../../store/types/types';
 import * as actions from '../../store/actions/actions';
 import NoteItem from '../NoteItem/NoteItem';
-import Header from '../Header/Header';
-import "./_noteContainer.scss";
+import { Header } from '../Header/Header';
 import ShowArchiveBtn from "../ShowArchiveBtn/ShowArchiveBtn";
 import Modal from "../Modal/Modal";
 
@@ -71,7 +70,7 @@ const NoteContainer: FC<Props> = ({ notes, showArchived, archiveNote, unarchiveN
         <div className='notes__wrapper'>
           <Header
             listItem={headerItems.map((l, index) => (
-              <li className='header__list-item' key={`header__list-item-${index}`}>{l}</li>
+              <li className='max-w-[110px] w-full text-base font-normal text-white' key={`header__list-item-${index}`}>{l}</li>
             ))}
             btns={
               <div className='header__icon-item'>
@@ -82,9 +81,9 @@ const NoteContainer: FC<Props> = ({ notes, showArchived, archiveNote, unarchiveN
           />
           <ul className='notes__list'>
             {showArchived ? allArchive.map((note, i) => (
-              <NoteItem note={note} key={`archive-${note.id}`} click={handleUnarchiveNote} archiveBtnName='Unarchive' clickDelete={handleRemoveNote} disabledBtn={showArchived} clickEdit={handleOpenModal} dates={dates} index={i} />
+              <NoteItem note={note} key={`archive-${note.id}`} click={handleUnarchiveNote} clickDelete={handleRemoveNote} disabledBtn={showArchived} clickEdit={handleOpenModal} dates={dates} index={i} />
             )) : allActive.map((note, i) => (
-              <NoteItem note={note} key={note.id} click={handleArchiveNote} archiveBtnName='Archive' clickDelete={handleRemoveNote} clickEdit={handleOpenModal} disabledBtn={showArchived} dates={dates} index={i} />
+              <NoteItem note={note} key={note.id} click={handleArchiveNote} clickDelete={handleRemoveNote} clickEdit={handleOpenModal} disabledBtn={showArchived} dates={dates} index={i} />
             ))}
 
           </ul>

@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+.App {
+  max-width: 1400px;
+  width: 100%;
+  @apply bg-white mt-5 mb-5 ml-0 mr-0 pt-0 pb-0 pl-5 pr-5
+}
+
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 18px;
+  outline-color: #969696;
+  line-height: 1;
+}
+
+.header {
+  @apply bg-grey p-5 flex justify-between rounded mb-5;
+}
+
+.header__list {
+  @apply flex justify-between items-center;
+}
+
+.header__list-icons {
+  max-width: 100px;
+  width: 100%;
+  @apply flex justify-between items-center
+}
+
+
+.header__list-item {
+  max-width: 110px;
+  width: 100%;
+  @apply text-base font-normal text-white;
+}
+
+.header__list-item-0 {
+  max-width: 800px;
+  width: 100%;
+}
+
+.header__show-archive {
+  max-width: 100px;
+  width: 100%;
+  cursor: pointer;
+  transition: all ease-in-out 0.7s;
+  @apply p-1 rounded border border-solid border-borderC bg-item text-base text-borderC;
+}
+
+.notes {
+  @apply mb-7;
+
+}
+
+.notes__show-modal {
+  @apply container flex justify-center
+}
+
+button {
+  cursor: pointer;
+  transition: all ease-in-out 0.7s;
+  @apply p-1 rounded border border-solid border-borderC bg-item text-base text-borderC;
+}
+
+button:hover {
+  @apply border-item bg-borderC text-item
+}
+
+.notes__btn-show {
+  max-width: 150px;
+  width: 100%;
+}
+
+.note,
+.statistics__list-item {
+  @apply bg-item mb-4 p-4 rounded flex justify-between items-center
+}
+
+.note__wrapper {
+  max-width: 900px;
+  width: 100%;
+  @apply flex justify-between
+}
+
+.note__field {
+  max-width: 110px;
+  width: 100%;
+  @apply text-base truncate font-normal
+}
+
+.note__btns {
+  max-width: 240px;
+  width: 100%;
+  @apply flex justify-between items-center
+}
+
+.note__btns-unarchived {
+  max-width: 100px;
+  width: 100%;
+  @apply flex justify-between items-center
+}
+
+.statistics__category-item {
+  max-width: 800px;
+  width: 100%;
+  @apply truncate text-base font-semibold
+}
+
+.statistics__active-item,
+.statistics__archive-item {
+  max-width: 80px;
+  width: 100%;
+  @apply text-base font-normal;
+}
+
+.modal {
+  @apply fixed top-0 left-0 h-screen w-screen flex flex-col justify-center items-center bg-modal
+}
+
+.modal__form {
+  @apply w-80 flex flex-col justify-center items-center bg-white rounded-lg p-4 gap-5
+}
+
+.modal__input-name,
+.modal__select,
+.modal__content {
+  @apply container p-2 rounded border border-solid border-grey
+}
+
+.modal__content {
+  @apply resize-none overflow-y-scroll
+}
+
+.modal__footer {
+  @apply container flex justify-between
+}
+
+.modal__btn-close,
+.modal__button-save {
+  max-width: 100px;
+  width: 100%;
+}

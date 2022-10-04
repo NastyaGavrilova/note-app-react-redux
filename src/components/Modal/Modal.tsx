@@ -8,7 +8,6 @@ import { alert } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/mobile/dist/PNotifyMobile.css';
 import '@pnotify/core/dist/Angeler.css';
-import "./_modal.scss";
 
 interface Props {
   modalData: ModalData,

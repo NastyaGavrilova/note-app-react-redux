@@ -1,14 +1,14 @@
 import React from 'react';
-import Header from '../Header/Header';
+import { Header } from '../Header/Header';
 import StatiscticsListItem from './StatiscticsListItem/StatiscticsListItem';
-import "./_statisticsList.scss";
+// import "./_statisticsList.scss";
 
-const ActiveArchive = () => {
+export const ActiveArchive = () => {
   const activeArchive = ["Note Category", 'Active', 'Archive'];
   return (
     <>
       {activeArchive.map((item, i) => (
-        <li className={`header__list-item header__list-item-${i}`} key={`header__list-item-1-${i}`}>{item}</li>
+        <li className={i === 0 ? "max-w-[800px] w-full text-base font-normal text-white" : "max-w-[110px] w-full text-base font-normal text-white"} key={`header__list-item-1-${i}`}>{item}</li>
       ))}
     </>
   )

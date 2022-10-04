@@ -3,8 +3,8 @@ import { AppDispatch } from '../../../store/store';
 import { State, SubmitNote } from '../../../store/types/types';
 import * as actions from '../../../store/actions/actions';
 import { connect } from 'react-redux';
-import "./_statisticsListItem.scss"
-interface Props {
+import { StatListItem } from './StatListItem';
+export interface Props {
   notes: SubmitNote[],
   onUpdate: (data: ListData) => void,
 }
@@ -41,11 +41,7 @@ const StatiscticsListItem: FC<Props> = ({ notes, onUpdate }) => {
       const identifier = key[0]
 
       return (
-        <li className='statistics__list-item' key={index}>
-          <p className='statistics__category-item'>{key}</p>
-          <p className='statistics__active-item'>{category[identifier].active}</p>
-          <p className='statistics__archive-item'>{category[identifier].archived}</p>
-        </li>
+        <StatListItem key={index} categoryName={key} counterActive={category[identifier].active} counterArchived={category[identifier].archived} />
       )
     })
     return markup
