@@ -55,6 +55,9 @@
 .header__show-archive {
   max-width: 100px;
   width: 100%;
+  cursor: pointer;
+  transition: all ease-in-out 0.7s;
+  @apply p-1 rounded border border-solid border-borderC bg-item text-base text-borderC;
 }
 
 .notes {
